@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Satellite Tracker Map</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
+  <style>
+    #map { height: 100vh; width: 100vw; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="leaflet/leaflet.js"></script>
+  <script>
+    // L.Icon.Default.imagePath = 'leaflet/images/';
+    const myCustomIcon = L.icon({
+      iconUrl: 'leaflet/images/myicon.png',
+      iconRetinaUrl: 'leaflet/images/myicon-2x.png',
+      iconSize: [40, 40],
+      iconAnchor: [20, 20], //point where the coordinate should be on the icon, pixel point on the icon image, usually [w/2, h/2] from iconSize
+      popupAnchor: [0, -20], //point where the popup should be on the icon, [0,0] means the popup will be right where the iconAnchor is
+    });
+    const map = L.map('map').setView([0, 0], 2); // World view
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    subdomains: ['a', 'b', 'c'],
+    attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // L.tileLayer('https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+    //   maxZoom: 19,
+    //   attribution: '© OpenStreetMap contributors, HOT'
+    // }).addTo(map);
+
+    // First marker at New York City
+    var satMarker = L.marker([40.7128, -74.0060], { icon: myCustomIcon }).addTo(map)
+      .bindPopup("Search a satellite to continue!").openPopup();
+
+    // var satMarker = L.marker([10.76, 106.66], { icon: myCustomIcon }).addTo(map)
+    //   .bindPopup("Tracking Satellite").openPopup();
+
+    // This is at Vietnam
+    // const satMarker = L.marker([10.76, 106.66], { icon: myCustomIcon }).addTo(map)
+    //   .bindPopup("Satellite Here").openPopup();
+  </script>
+</body>
+</html>
