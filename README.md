@@ -3,7 +3,8 @@
 Welcome to the first open-source release of the SPACEAPP project!
 This version provides a simplified, one-directory workspace for developers, learners, and anyone curious about how SPACEAPP was built.
 
-📁 Workspace Structure
+📁 Workspace Structure 
+```
 SPACEAPPv3(OPENSRC)/
 │── API/              # API worker modules
 │── src/              # auth.py, satellitetracker.py, storage JSON files
@@ -11,6 +12,7 @@ SPACEAPPv3(OPENSRC)/
 │── ui/               # images + UI components for SPACEAPP v3.0
 │── path.py           # program routing + communication paths
 └── main.py           # program entry point
+```
 
 🧪 About This Release
 
