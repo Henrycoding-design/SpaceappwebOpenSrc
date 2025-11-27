@@ -3,12 +3,12 @@
 
 Here's the Workspace Structure:
 SPACEAPPv3(OPENSRC)/
-│── API/ <- API worker
-│── src/ <- auth.py and satellitetracker.py along with storage json files
-│── templates/ <- map.html, leaflet lib and PrivatePolicy.html (cleared for legal purposes)
-│── ui/ <- images and three ui files of SPACEAPPv3.0
-│── path.py <- contain the paths for program redirect/communication
-└── main.py <- run the program
+│── API/              # API worker modules
+│── src/              # auth.py, satellitetracker.py, storage JSON files
+│── templates/        # map.html, leaflet libs, PrivacyPolicy.html
+│── ui/               # images + UI components for SPACEAPP v3.0
+│── path.py           # program routing + communication paths
+└── main.py           # program entry point
 
 
 # Credit
